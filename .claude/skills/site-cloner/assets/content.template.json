@@ -1,0 +1,158 @@
+{
+  "$schema_version": "1.0",
+  "site": {
+    "url": "",
+    "captured_at": "AAAA-MM-DD",
+    "render": "estatico|spa",
+    "lang_declared": null,
+    "lang_content": "pt-BR",
+    "brand": {
+      "name": null,
+      "logo_text": null,
+      "logo_href": "/"
+    }
+  },
+  "seo": {
+    "title": null,
+    "meta_description": null,
+    "og": null,
+    "canonical": null,
+    "favicon": null,
+    "robots": null,
+    "jsonld": [],
+    "_todo": []
+  },
+  "nav": [
+    {
+      "label": "",
+      "href": "",
+      "page": ""
+    }
+  ],
+  "pages": [
+    {
+      "id": "",
+      "path": "/",
+      "title": null,
+      "sections": [
+        {
+          "id": "",
+          "order": 1,
+          "type": "hero|cards|pricing|steps|gallery|text|list|cta-band|about|links|faq|testimonials|footer",
+          "heading": {
+            "level": 1,
+            "text": ""
+          },
+          "texts": [],
+          "bullets": [],
+          "price": {
+            "display": "",
+            "currency": "BRL",
+            "amount": null,
+            "period_display": null
+          },
+          "ctas": [
+            {
+              "label": "",
+              "url": "",
+              "external": false,
+              "target": null
+            }
+          ],
+          "cards": [
+            {
+              "tag": null,
+              "title": "",
+              "title_level": 3,
+              "text": "",
+              "for_you": null,
+              "cta": {
+                "label": "",
+                "url": "",
+                "external": false
+              }
+            }
+          ],
+          "steps": [
+            {
+              "n": 1,
+              "title": "",
+              "title_level": 3,
+              "text": ""
+            }
+          ],
+          "images": [
+            {
+              "src": "",
+              "alt": "",
+              "caption": null
+            }
+          ],
+          "videos": [
+            {
+              "src": "",
+              "provider": null,
+              "title": null,
+              "poster": null
+            }
+          ],
+          "subsections": [
+            {
+              "heading": {
+                "level": 3,
+                "text": ""
+              },
+              "texts": []
+            }
+          ],
+          "items": [
+            {
+              "question": "",
+              "answer": ""
+            }
+          ],
+          "_todo": []
+        }
+      ]
+    }
+  ],
+  "contacts": {
+    "whatsapp": null,
+    "email": null,
+    "phone": null,
+    "address": null
+  },
+  "social": [
+    {
+      "network": "",
+      "label": "",
+      "url": ""
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "",
+      "author": "",
+      "role": null,
+      "image": null
+    }
+  ],
+  "faq": [
+    {
+      "question": "",
+      "answer": ""
+    }
+  ],
+  "footer": null,
+  "external_links": [],
+  "assets": [
+    {
+      "src": "",
+      "url": "",
+      "kind": "image",
+      "local": null,
+      "sha256": null
+    }
+  ],
+  "todo": []
+}

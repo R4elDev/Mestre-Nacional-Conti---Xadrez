@@ -1,0 +1,20 @@
+{
+  "_source": "Adições solicitadas pela cliente. Ausentes no site original.",
+  "heroPhoto": {
+    "src": "isabella-xadrez.png",
+    "alt": "Isabella Conti, de óculos redondos, concentrada diante de um tabuleiro de xadrez.",
+    "width": 409,
+    "height": 441,
+    "pages": [
+      "home",
+      "mentoria",
+      "aula-individual",
+      "about"
+    ]
+  },
+  "instagram": {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/isabella.conti/",
+    "ariaLabel": "Instagram de Isabella Conti"
+  }
+}

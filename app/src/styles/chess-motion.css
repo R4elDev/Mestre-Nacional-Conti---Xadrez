@@ -1,0 +1,105 @@
+:where([data-chess="hero"]) {
+  position: relative;
+}
+.chess-motion {
+  display: block;
+  pointer-events: none;
+}
+.chess-motion__piece {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+.chess-motion--hero {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.chess-motion--hero .chess-motion__piece {
+  position: absolute;
+  inline-size: clamp(2.5rem, 8vw, 6rem);
+}
+.chess-motion--hero .chess-motion__piece:first-child {
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  --chess-lift: -.5rem;
+}
+.chess-motion--hero .chess-motion__piece:last-child {
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  --chess-lift: .35rem;
+}
+[data-chess="divider"]::before,
+[data-chess="divider"]::after {
+  content: none;
+}
+.chess-motion--divider {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+  gap: clamp(.125rem, 1vw, .55rem);
+  inline-size: min(100%, 43rem);
+  margin-inline: auto;
+  padding: .4rem clamp(.45rem, 2vw, 1rem);
+  border-radius: var(--fw-radius, 1rem);
+  background: var(--fw-sand, #eed3ad);
+}
+@media (max-width: 480px) {
+  .chess-motion--divider {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    max-inline-size: 20rem;
+    row-gap: 0;
+  }
+}
+
+.chess-motion--cta {
+  display: inline-block;
+  inline-size: 1.35em;
+  margin-inline-start: .35em;
+  vertical-align: middle;
+}
+@keyframes chess-motion-enter {
+  from { opacity: 0; transform: translateY(.65rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes chess-motion-float {
+  50% { transform: translateY(var(--chess-lift)); }
+}
+@keyframes chess-motion-lineup {
+  from { opacity: 0; transform: translateY(.3rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-chess-pending] > .chess-motion--hero,
+  [data-chess-pending] > .chess-motion--divider .chess-motion__piece {
+    opacity: 0;
+  }
+  [data-chess-played] > .chess-motion--hero .chess-motion__piece {
+    animation:
+      chess-motion-enter var(--fw-motion-enter, 560ms) var(--fw-ease, ease-out),
+      chess-motion-float 1.7s ease-in-out var(--fw-motion-enter, 560ms) 2;
+  }
+  [data-chess-played] > .chess-motion--divider .chess-motion__piece {
+    animation: chess-motion-lineup var(--fw-motion-fast, 160ms) var(--fw-ease, ease-out)
+      calc(var(--chess-piece-index) * 30ms) backwards;
+  }
+  .chess-motion--divider .chess-motion__piece {
+    transition: transform var(--fw-motion-fast, 160ms) var(--fw-ease, ease-out);
+  }
+  .chess-motion--cta .chess-motion__piece {
+    transition: transform var(--fw-motion-fast, 160ms) var(--fw-ease, ease-out);
+  }
+  [data-chess="cta"]:focus-visible > .chess-motion--cta .chess-motion__piece {
+    transform: translateY(-.15em) rotate(-9deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  [data-chess="divider"]:hover > .chess-motion--divider .chess-motion__piece {
+    transform: translateY(-.15rem);
+  }
+  [data-chess="cta"]:hover > .chess-motion--cta .chess-motion__piece {
+    transform: translateY(-.15em) rotate(-9deg);
+  }
+}

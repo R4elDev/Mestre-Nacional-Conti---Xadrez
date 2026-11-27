@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g stroke="#573527" color="#573527" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <g id="corpo" fill="#F8ECD8"><path d="M30 78Q39 62 38 49H62Q61 62 70 78Z"/></g>
+    <g id="topo" fill="#F8ECD8"><path d="M37 47L28 34Q25 25 35 26Q45 27 50 37Q55 27 65 26Q75 25 72 34L63 47Z"/><path fill="none" stroke-width="8" d="M50 12V31M43 19H57"/><path fill="none" stroke="#E2AA56" stroke-width="4" d="M50 12V31M43 19H57"/></g>
+    <g id="colarinho" fill="#E2AA56"><rect x="34" y="45" width="32" height="8" rx="4"/></g>
+    <g id="base" fill="#E2AA56"><rect x="23" y="75" width="54" height="14" rx="6"/></g>
+  </g>
+</svg>

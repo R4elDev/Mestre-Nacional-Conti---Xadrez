@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light;
+  --chess-paper: #f8ecd8;
+  --chess-ink: #301b16;
+  --chess-accent: #713e2f;
+  --chess-duration: 420ms;
+  --chess-ease: cubic-bezier(.22, .61, .36, 1);
+}
+body { margin: 0; background: var(--chess-paper); color: var(--chess-ink); font: 1rem/1.5 system-ui, sans-serif; }
+main { max-width: 52rem; margin: auto; padding: clamp(1rem, 4vw, 3rem); }
+h1, h2 { font-family: Georgia, serif; line-height: 1.15; }
+section { margin-bottom: 3rem; }
+.controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-block: 1rem; }
+button { border: 0; border-radius: .8rem; padding: .65rem .9rem; font: inherit; color: white; background: var(--chess-accent); cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--chess-ink); outline-offset: 3px; }
+button:disabled { opacity: .65; cursor: default; }
+.gallery { margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit,minmax(8rem,1fr)); gap: .75rem; }
+.gallery figure { margin: 0; border-radius: 1rem; padding: .5rem; background: #efcf9f; text-align: center; }
+.gallery figure[data-variant="escura"] { background: #c9916e; }
+.gallery img { display: block; width: min(100%, 7rem); margin: auto; }
+.definitions { position: absolute; }
+@keyframes enter { from { opacity: 0; transform: translateY(1rem); } }
+@keyframes float { 50% { transform: translateY(-.35rem); } }
+@keyframes turn { 50% { transform: rotate(-16deg); } }
+@keyframes pawn-reveal { from { clip-path: url(#reveal-pawn); opacity: 0; } to { clip-path: url(#reveal-pawn); opacity: .55; } }
+@keyframes expand-reveal { from { clip-path: circle(0% at 50% 50%); } to { clip-path: circle(100% at 50% 50%); } }
+@media (prefers-reduced-motion: no-preference) {
+  .gallery figure.enter { animation: enter var(--chess-duration) var(--chess-ease) both; }
+  .gallery figure:hover img { animation: float 700ms ease-in-out, turn 700ms ease-in-out; animation-composition: add; }
+  .gallery.reveal { animation: pawn-reveal 220ms ease-out, expand-reveal 400ms var(--chess-ease) 220ms; }
+}

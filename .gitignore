@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.maestri/
+.claude/settings.local.json
+content/downloads/
+content/fotos/
+*.log
+.DS_Store

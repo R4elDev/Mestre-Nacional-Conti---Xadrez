@@ -1,0 +1,132 @@
+:root {
+  color-scheme: light;
+  --fw-cream: #fff4e3;
+  --fw-sand: #eed3ad;
+  --fw-terracotta: #8f391f;
+  --fw-amber: #ffd285;
+  --fw-caramel: #946045;
+  --fw-coffee: #3b2418;
+  --fw-gold: #7a4100;
+  --fw-surface: var(--fw-cream);
+  --fw-text: var(--fw-coffee);
+  --fw-muted: #65483a;
+  --fw-accent: var(--fw-terracotta);
+  --fw-on-accent: var(--fw-cream);
+  --fw-focus: var(--fw-gold);
+  --fw-board-light: var(--fw-sand);
+  --fw-board-dark: var(--fw-caramel);
+  --fw-piece-light: #fff4e3;
+  --fw-piece-dark: #382219;
+  --fw-piece-outline: var(--fw-piece-dark);
+  --fw-radius: 2rem;
+  --fw-motion-fast: 160ms;
+  --fw-motion-enter: 560ms;
+  --fw-ease: cubic-bezier(.2,.7,.25,1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --fw-surface: #271a14;
+    --fw-text: #fff0d8;
+    --fw-muted: #dfbfa8;
+    --fw-accent: #f0a37c;
+    --fw-on-accent: #321b12;
+    --fw-focus: var(--fw-amber);
+    --fw-board-light: #c89567;
+    --fw-board-dark: #704331;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --fw-surface: #271a14;
+  --fw-text: #fff0d8;
+  --fw-muted: #dfbfa8;
+  --fw-accent: #f0a37c;
+  --fw-on-accent: #321b12;
+  --fw-focus: var(--fw-amber);
+  --fw-board-light: #c89567;
+  --fw-board-dark: #704331;
+}
+
+[data-piece-tone="dark"] { --fw-piece-outline: var(--fw-piece-light); }
+
+:focus-visible { outline: 3px solid var(--fw-focus); outline-offset: 4px; }
+
+.fw-art {
+  display: grid;
+  place-items: center;
+  min-block-size: 14rem;
+  border-radius: var(--fw-radius);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.fw-board {
+  width: min(65%, 15rem);
+  aspect-ratio: 1;
+  background: conic-gradient(var(--fw-board-dark) 25%, var(--fw-board-light) 0 50%,
+    var(--fw-board-dark) 0 75%, var(--fw-board-light) 0) 0 0 / 25% 25%;
+  border-radius: calc(var(--fw-radius) / 3);
+}
+
+.fw-circle, .fw-half, .fw-arc, .fw-diamond {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  color: var(--fw-amber);
+}
+
+.fw-circle { inset: 9% auto auto 10%; border-radius: 50%; background: currentColor; }
+.fw-half { inset: auto 8% 9% auto; height: 2rem; border-radius: 4rem 4rem 0 0; background: var(--fw-caramel); }
+.fw-arc { inset: 10% 9% auto auto; border: .45rem solid var(--fw-accent); border-bottom-color: transparent; border-left-color: transparent; border-radius: 50%; }
+.fw-diamond { inset: auto auto 14% 11%; width: 2rem; height: 2rem; transform: rotate(45deg); background: var(--fw-accent); }
+
+.fw-curtain { position: absolute; inset: 0; opacity: 0; background: var(--fw-caramel); clip-path: polygon(0 0, 100% 0, 0 100%); }
+.fw-curtain + .fw-curtain { clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.fw-marquee { position: absolute; inset: auto -50% 0; block-size: .5rem; background: repeating-linear-gradient(90deg, var(--fw-caramel) 0 2rem, var(--fw-amber) 2rem 4rem); }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-playing] > .fw-art,
+  [data-playing] > .fw-art > * {
+    animation-duration: var(--fw-motion-enter);
+    animation-timing-function: var(--fw-ease);
+  }
+
+  [data-playing="circle"] > .fw-art { animation-name: fw-circle-in; }
+  [data-playing="wipe"] > .fw-art { animation-name: fw-wipe; }
+  [data-playing="curtain"] > .fw-art > .fw-curtain { animation-name: fw-curtain-left; }
+  [data-playing="curtain"] > .fw-art > .fw-curtain + .fw-curtain { animation-name: fw-curtain-right; }
+  [data-playing="parallax"] > .fw-art > .fw-circle { animation-name: fw-drift; }
+  [data-playing="slide-scale"] > .fw-art { animation-name: fw-slide; }
+  [data-playing="marquee"] > .fw-art > .fw-marquee { animation-name: fw-marquee; }
+  [data-playing="morph"] > .fw-art { animation-name: fw-morph; }
+
+  @supports (animation-timeline: view()) and (animation-range: entry 0% cover 60%) {
+    [data-active="parallax"] > .fw-art > :is(.fw-circle, .fw-arc) {
+      animation: fw-drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+
+    [data-active="parallax"] > .fw-art > .fw-arc { --fw-drift-offset: -1.5rem; }
+  }
+}
+
+@keyframes fw-circle-in { from { clip-path: circle(0); } to { clip-path: circle(100%); } }
+@keyframes fw-wipe {
+  from { clip-path: polygon(-20% 0, 0 0, -20% 100%, -40% 100%); }
+  to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+@keyframes fw-curtain-left { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(-75%); } }
+@keyframes fw-curtain-right { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(75%); } }
+@keyframes fw-drift { from { transform: translateY(var(--fw-drift-offset, 1.5rem)); } to { transform: none; } }
+@keyframes fw-slide { from { transform: translateY(1rem) scale(.95); opacity: .3; } }
+@keyframes fw-marquee { from { transform: translateX(-24%); } to { transform: translateX(0); } }
+@keyframes fw-morph {
+  from { clip-path: polygon(50% 0, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0 50%, 15% 15%); }
+  to { clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%); }
+}

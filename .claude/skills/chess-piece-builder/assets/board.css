@@ -1,0 +1,20 @@
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  width: min(100%, 27rem);
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+.chess-square { background: var(--chess-square-light, #f4dfbd); }
+.chess-square[data-tone="dark"] { background: var(--chess-square-dark, #b67b5c); }
+.chess-token {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 12.5%;
+  height: 12.5%;
+  transform: translate(calc(var(--file) * 100%), calc(var(--rank) * 100%));
+}
+.chess-token img { display: block; width: 100%; height: 100%; }

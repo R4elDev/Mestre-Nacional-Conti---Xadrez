@@ -1,0 +1,244 @@
+{
+  "$schema_version": "1.0",
+  "_aviso": "EXEMPLO PARCIAL com dados reais confirmados de isabellaconti.com.br (home + about). O conteudo completo esta em content/content.json.",
+  "site": {
+    "url": "https://isabellaconti.com.br/",
+    "captured_at": "2026-11-26",
+    "render": "spa-angular (JS) hospedado em GitHub Pages; rotas profundas dao 404 no acesso direto, so funcionam via navegacao interna",
+    "lang_declared": "en",
+    "lang_content": "pt-BR",
+    "brand": {
+      "name": "Isabella Conti",
+      "logo_text": "♟️",
+      "logo_href": "/"
+    }
+  },
+  "seo": {
+    "title": "Treinamento de Xadrez",
+    "meta_description": null,
+    "og": null,
+    "canonical": null,
+    "favicon": "favicon.ico",
+    "robots": null,
+    "_todo": [
+      "TODO-confirmar: <html lang> original e \"en\" mas todo o conteudo e pt-BR; clone deve usar pt-BR (decisao do cliente)",
+      "TODO-confirmar: site nao tem meta description/OG; definir com o cliente (nao inventar)",
+      "TODO-confirmar: <title> e o mesmo em todas as rotas"
+    ]
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/",
+      "page": "home"
+    },
+    {
+      "label": "Mentoria",
+      "href": "/mentoria",
+      "page": "mentoria"
+    },
+    {
+      "label": "Aula individual",
+      "href": "/aula-individual",
+      "page": "aula-individual"
+    },
+    {
+      "label": "Cursos gravados",
+      "href": "/cursos-gravados",
+      "page": "cursos-gravados"
+    },
+    {
+      "label": "Sobre mim",
+      "href": "/about",
+      "page": "about"
+    }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": "Treinamento de Xadrez",
+      "sections": [
+        {
+          "id": "hero",
+          "order": 1,
+          "type": "hero",
+          "heading": {
+            "level": 1,
+            "text": "Um próximo passo claro para o seu xadrez."
+          },
+          "texts": [
+            "Escolha entre acompanhamento contínuo, uma aula sob medida ou materiais gravados para estudar no seu ritmo."
+          ],
+          "ctas": [
+            {
+              "label": "Ver caminhos de treino",
+              "url": "#training-paths",
+              "external": false
+            }
+          ]
+        },
+        {
+          "id": "training-paths",
+          "order": 2,
+          "type": "cards",
+          "heading": {
+            "level": 2,
+            "text": "Três formas de estudar com mais direção."
+          },
+          "texts": [
+            "Cada formato responde a um momento diferente do seu treino."
+          ],
+          "cards": [
+            {
+              "title": "Mentoria de xadrez em turma",
+              "title_level": 3,
+              "text": "Treino guiado com rotina, acompanhamento e um plano para você continuar evoluindo com consistência.",
+              "for_you": "Para você: Quer estudar com uma direção contínua e ter apoio.",
+              "cta": {
+                "label": "Conhecer a mentoria",
+                "url": "/mentoria",
+                "external": false
+              }
+            },
+            {
+              "title": "Aula individual",
+              "title_level": 3,
+              "text": "Uma aula de 1 hora para treinar e analisar seu momento, organizar prioridades e definir próximos passos possíveis.",
+              "for_you": "Para você: Sente que está estudando sem saber o que priorizar agora.",
+              "cta": {
+                "label": "Organizar uma aula",
+                "url": "/aula-individual",
+                "external": false
+              }
+            },
+            {
+              "title": "Cursos gravados",
+              "title_level": 3,
+              "text": "Materiais diretos para aprofundar um tema específico sem depender de uma agenda fixa.",
+              "for_you": "Para você: Quer escolher um assunto e estudar no horário que fizer sentido para você.",
+              "cta": {
+                "label": "Explorar cursos",
+                "url": "/cursos-gravados",
+                "external": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "title": "Treinamento de Xadrez",
+      "sections": [
+        {
+          "id": "bio",
+          "order": 1,
+          "type": "about",
+          "heading": {
+            "level": 1,
+            "text": "Olá, eu sou Isabella Conti"
+          },
+          "texts": [
+            "Treinadora e enxadrista focada em desenvolvimento com método e consistência.",
+            "O xadrez é a base do meu trabalho e da minha rotina. Em 2020 e 2021, representei a Olimpíada pelo Brasil, experiência que marcou minha trajetória como jogadora e como estudiosa do jogo.",
+            "Em 2023, fui campeã brasileira universitária. Atualmente, sou número 6 do Brasil e tenho rating FIDE de 2021.",
+            "Aqui eu compartilho minha forma de ensinar e os treinamentos que criei para quem quer evoluir com clareza, planejamento e acompanhamento de verdade."
+          ],
+          "images": [
+            {
+              "src": "assets/images/isabella-avatar.jpeg",
+              "alt": "Isabella",
+              "natural_size": "1280x853"
+            }
+          ],
+          "_todo": [
+            "TODO-confirmar: alt original e apenas \"Isabella\" — manter verbatim; sugerir alt melhor ao cliente sem alterar o original"
+          ]
+        },
+        {
+          "id": "oferta-resumo",
+          "order": 2,
+          "type": "list",
+          "heading": {
+            "level": 2,
+            "text": "O que você encontra por aqui"
+          },
+          "bullets": [
+            "Mentoria de xadrez em turma",
+            "Aulas individuais",
+            "Cursos gravados",
+            "Cronograma personalizado",
+            "Acompanhamento estratégico",
+            "Estudo com clareza"
+          ]
+        },
+        {
+          "id": "links",
+          "order": 3,
+          "type": "links",
+          "ctas": [
+            {
+              "label": "Meu canal no YouTube",
+              "url": "https://www.youtube.com/@MNConti",
+              "external": true,
+              "target": "_blank"
+            },
+            {
+              "label": "Voltar para os treinamentos →",
+              "url": "/",
+              "external": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "contacts": {
+    "whatsapp": null,
+    "email": null,
+    "phone": null,
+    "address": null,
+    "_todo": [
+      "Nenhum numero/e-mail visivel no site. Ha apenas o texto \"Grupo exclusivo no WhatsApp\" (beneficio da mentoria, sem link). TODO-confirmar com o cliente se deve haver link/contato"
+    ]
+  },
+  "social": [
+    {
+      "network": "YouTube",
+      "label": "Meu canal no YouTube",
+      "url": "https://www.youtube.com/@MNConti"
+    }
+  ],
+  "testimonials": [],
+  "faq": [],
+  "footer": null,
+  "footer_note": "O site original nao tem rodape, depoimentos nem FAQ. Nao criar conteudo para eles.",
+  "external_links": [
+    "https://www.youtube.com/@MNConti"
+  ],
+  "assets": [
+    {
+      "src": "assets/images/isabella-avatar.jpeg",
+      "url": "https://isabellaconti.com.br/assets/images/isabella-avatar.jpeg",
+      "kind": "image",
+      "local": null,
+      "sha256": null
+    },
+    {
+      "src": "favicon.ico",
+      "url": "https://isabellaconti.com.br/favicon.ico",
+      "kind": "icon",
+      "local": null,
+      "sha256": null
+    }
+  ],
+  "todo": [
+    "TODO-confirmar: html lang original=en; clone em pt-BR",
+    "TODO-confirmar: sem meta description/OG — definir com cliente",
+    "TODO-confirmar: precos dos cursos gravados (so no checkout)",
+    "TODO-confirmar: contato/WhatsApp (so mencionado como beneficio)",
+    "TODO-confirmar: ordem do card de preco na aula individual (conferir com Lupa)"
+  ]
+}
