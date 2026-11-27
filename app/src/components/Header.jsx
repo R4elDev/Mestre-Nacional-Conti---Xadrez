@@ -19,12 +19,24 @@ export default function Header() {
     });
   }, [pathname]);
 
+  // O navegador não rola o foco quando o link está só parcialmente visível; no menu
+  // horizontal móvel isso deixa o link cortado sob o esmaecimento das bordas.
+  function revealFocused(event) {
+    if (!window.matchMedia('(width < 43rem)').matches) return;
+    event.target.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: 'auto',
+      container: 'nearest',
+    });
+  }
+
   return (
     <header className="site-header">
       <Link className="brand" to={brand.logo_href} aria-label={brand.name}>
         <span aria-hidden="true">{brand.logo_text}</span>
       </Link>
-      <nav ref={nav} aria-label="Navegação principal">
+      <nav ref={nav} aria-label="Navegação principal" onFocus={revealFocused}>
         <ul>
           {content.nav.map(item => (
             <li key={item.href}><NavLink to={item.href} end>{item.label}</NavLink></li>

@@ -88,7 +88,6 @@ figure { margin: 0; }
     max-inline-size: 100%;
     overflow-x: auto;
     overscroll-behavior-x: contain;
-    scroll-snap-type: x proximity;
     scroll-padding-inline: .75rem;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
@@ -101,7 +100,6 @@ figure { margin: 0; }
     padding: .35rem .75rem;
   }
   .site-header nav li, .site-header nav a { flex: none; }
-  .site-header nav li { scroll-snap-align: start; }
   .site-header nav a { white-space: nowrap; }
   .site-header nav a:focus-visible { outline-offset: 1px; }
 }
