@@ -1,4 +1,4 @@
-export const imageBase = '/assets/img/';
+export const imageBase = import.meta.env.BASE_URL + 'assets/img/';
 const dimensions = {
   'cronograma.png': [1587, 2245],
   'plataforma.png': [1920, 906],

@@ -8,7 +8,7 @@ import './styles/site.css';
 import './styles/chess-game.css';
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
     <App />
   </BrowserRouter>
 );
