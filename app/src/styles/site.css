@@ -81,6 +81,33 @@ figure { margin: 0; }
   text-decoration: underline;
   text-underline-offset: .2em;
 }
+@media (width < 43rem) {
+  .site-header { gap: .35rem; }
+  .site-header nav {
+    flex-basis: 100%;
+    max-inline-size: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: .75rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, transparent, #000 .45rem, #000 calc(100% - .45rem), transparent);
+  }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav ul {
+    flex-wrap: nowrap;
+    inline-size: max-content;
+    padding: .35rem .75rem;
+  }
+  .site-header nav li, .site-header nav a { flex: none; }
+  .site-header nav li { scroll-snap-align: start; }
+  .site-header nav a { white-space: nowrap; }
+  .site-header nav a:focus-visible { outline-offset: 1px; }
+}
+@media (width < 43rem) and (forced-colors: active) {
+  .site-header nav { mask-image: none; }
+}
 main { padding-block: .5rem 3rem; }
 .panel {
   position: relative;
