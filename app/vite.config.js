@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Endereço padrão do GitHub Pages: https://r4eldev.github.io/Mestre-Nacional-Monti---Xadrez/
+// Endereço padrão do GitHub Pages: https://r4eldev.github.io/Mestre-Nacional-Conti---Xadrez/
 // O build (e o `npm run preview` do build) vive nesse subcaminho; o `npm run dev` fica na raiz.
 // Para domínio próprio, gere com VITE_BASE=/ npm run build (e rode o preview com a mesma variável).
-const REPO_BASE = '/Mestre-Nacional-Monti---Xadrez/';
+const REPO_BASE = '/Mestre-Nacional-Conti---Xadrez/';
 const isPreview = process.argv.includes('preview');
 
 export default defineConfig(({ command }) => ({

@@ -1,4 +1,4 @@
-# Mestre-Nacional-Monti---Xadrez
+# Mestre-Nacional-Conti---Xadrez
 
 Remontagem do site de treinamento de xadrez em React, mantendo o conteúdo do original.
 
